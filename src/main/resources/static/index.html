@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Agência de Viagens — Painel</title>
+    <style>
+        body {
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            margin: 20px;
+            background: #f6f7fb;
+            color: #222;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 16px;
+            box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+            margin-bottom: 16px;
+        }
+
+        form>div {
+            margin-bottom: 10px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        label {
+            width: 120px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            flex: 1;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: 0;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button.secondary {
+            background: #6b7280;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #efefef;
+        }
+
+        .actions button {
+            margin-right: 6px;
+        }
+
+        .small {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .col {
+            flex: 1;
+        }
+
+        #mensagem {
+            margin-top: 6px;
+            color: green;
+        }
+
+        .error {
+            color: #b91c1c;
+        }
+
+        .muted {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .badge {
+            background: #f1f5f9;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal .card {
+            width: 520px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Agência de Viagens — Painel de Testes</h1>
+
+        <div class="card" id="cadastroCard">
+            <h3>Cadastrar novo destino</h3>
+            <form id="formCadastro">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input id="nome" name="nome" required placeholder="Ex: Ilha Paradiso" />
+                </div>
+                <div>
+                    <label for="localizacao">Localização</label>
+                    <input id="localizacao" name="localizacao" placeholder="Ex: Fernando de Noronha, Brasil" required />
+                </div>
+                <div>
+                    <label for="preco">Preço (R$)</label>
+                    <input id="preco" name="preco" type="number" step="0.01" placeholder="2500.00" required />
+                </div>
+                <div>
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" name="descricao" rows="2" placeholder="Descrição curta"></textarea>
+                </div>
+                <div style="justify-content:flex-end; display:flex;">
+                    <button type="submit">Cadastrar destino</button>
+                </div>
+                <div id="mensagem"></div>
+            </form>
+        </div>
+
+        <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h3>Destinos</h3>
+                <div class="row" style="gap:8px;">
+                    <input id="termoBusca" placeholder="Pesquisar por nome ou local..." />
+                    <button id="btnBuscar" class="secondary">Buscar</button>
+                    <button id="btnListar">Listar tudo</button>
+                </div>
+            </div>
+
+            <table id="tabelaDestinos">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Localização</th>
+                        <th>Preço</th>
+                        <th>Avaliação</th>
+                        <th class="muted">Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="modal" style="display:none;"></div>
+
+        <div class="card muted">
+            <div>Backend: <span id="backendStatus" class="badge">verificando...</span></div>
+            <div style="margin-top:6px;">Use esta interface para testar os endpoints da API. A rota base é
+                <code>/api/destinos</code>.</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

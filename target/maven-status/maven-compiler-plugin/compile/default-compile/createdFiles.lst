@@ -1,1 +1,5 @@
+com\agencia\agencia_viagem\repository\DestinoRepository.class
+com\agencia\agencia_viagem\service\DestinoService.class
 com\agencia\agencia_viagem\AgenciaViagemApplication.class
+com\agencia\agencia_viagem\controller\DestinoController.class
+com\agencia\agencia_viagem\model\Destino.class
