@@ -1,0 +1,67 @@
+#  Agencia de Viagens
+
+Projeto de uma API RESTful desenvolvida em **Java** com **Spring Boot** para gerenciamento de destinos e pacotes de viagem. 
+Esta API permite que clientes e parceiros externos integrem-se ao sistema da agência para consultar, cadastrar e reservar destinos turísticos.
+
+---
+
+##  Funcionalidades
+
+A API permite:
+
+- Cadastrar os destinos de viagem;
+- Listar todos os destinos de viagem disponíveis;
+- Pesquisar destinos por nome ou localização;
+- Visualizar informações detalhadas sobre um destino específico;
+- Reservar pacotes de viagens para um destino;
+- Excluir destino.
+
+---
+
+##  Tecnologias Utilizadas
+- Java 17
+- Spring Boot 3.x
+- Spring Data JPA
+- H2 Database (ou MySQL, opcional)
+- Maven
+- Postman (para testes de API)
+
+---
+
+##  Clonar o Repositório
+
+Abra o terminal em seu computador e use o comando:
+
+```bash
+git clone https://github.com/23Aline/agencia_viagem.git
+```
+
+Em seguida:
+
+```bash
+cd agencia_viagem
+```
+
+Depois:
+
+```bash
+mvn clean install
+```
+
+Por fim, inicie o servidor de desenvolvimento:
+
+```bash
+mvn spring-boot:run
+```
+
+A API estará disponível em:
+
+```bash
+http://localhost:8080
+```
+
+---
+### Mizaela e Aline 
+
+🔗 [Mizaelaa](https://github.com/Mizaelaa)  
+🔗 [23Aline](https://github.com/23Aline)
