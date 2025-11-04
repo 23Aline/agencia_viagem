@@ -57,6 +57,7 @@ A API estará disponível em:
 ```bash
 http://localhost:8080
 ```
+![WhatsApp Image 2025-11-04 at 13 49 27](https://github.com/user-attachments/assets/77769620-cf12-4610-be25-3feffa242c96)
 
 ---
 ### Mizaela e Aline 
