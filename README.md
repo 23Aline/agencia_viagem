@@ -18,14 +18,12 @@ A API permite:
 
 ---
 
-##  Tecnologias Utilizadas
+##  Tecnologias Necessárias
 - Java 17
-- Spring Boot 3.x
-- Spring Data JPA
-- H2 Database (ou MySQL, opcional)
+- Spring Boot 
 - Maven
-- Postman (para testes de API)
-
+- JSON Formatter (extensão do Google)
+  
 ---
 
 ##  Clonar o Repositório
